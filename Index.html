@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X-Lunox</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div id="registerModal" class="modal hidden">
+  <div class="modal-box">
+    <h2>Daftar ke X-Lunox</h2>
+    <input id="regHandle" placeholder="Handle (contoh: lunox)">
+    <input id="regName" placeholder="Nama">
+    <button id="btnRegister">Buat Akun</button>
+  </div>
+</div>
+
+<div class="app">
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="logo">X-Lunox</div>
+    <a class="active"><i class="fa-solid fa-house"></i> Home</a>
+    <a id="navExplore"><i class="fa-solid fa-magnifying-glass"></i> Explore</a>
+    <a id="navNotif"><i class="fa-solid fa-bell"></i> Notifications <span id="notifCount" class="badge hidden">0</span></a>
+    <a id="navAI"><i class="fa-solid fa-robot"></i> Lunox AI</a>
+    <a id="navProfile"><i class="fa-solid fa-user"></i> Profile</a>
+    <button id="btnCompose" class="btn-primary big">Post</button>
+    <div class="me" id="meBox"></div>
+  </nav>
+
+  <!-- FEED -->
+  <main class="feed">
+    <div class="tabs">
+      <div class="tab active">For you</div>
+      <div class="tab" id="tabFollowing">Following</div>
+    </div>
+    <div class="composer">
+      <img id="compAv" class="avatar">
+      <div class="comp-right">
+        <textarea id="compText" placeholder="Apa yang terjadi?"></textarea>
+        <div class="comp-actions">
+          <label><i class="fa-regular fa-image"></i><input type="file" id="compFile" accept="image/*,video/*" hidden></label>
+          <span id="fileName"></span>
+          <button id="btnPost" class="btn-primary">Post</button>
+        </div>
+      </div>
+    </div>
+    <div id="feedList"></div>
+  </main>
+
+  <!-- RIGHT -->
+  <aside class="rightbar">
+    <div class="searchbox"><i class="fa-solid fa-magnifying-glass"></i><input id="searchInput" placeholder="Search X-Lunox"></div>
+    <div class="card" id="aiCard">
+      <h3>Lunox AI</h3>
+      <div id="aiChat" class="ai-chat"></div>
+      <div class="ai-input">
+        <input id="aiText" placeholder="Tanya AI...">
+        <button id="aiSend"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Who to follow</h3>
+      <div id="whoList"></div>
+    </div>
+  </aside>
+</div>
+
+<!-- AI FLOAT -->
+<div id="aiPanel" class="ai-panel hidden">
+  <div class="ai-head">Lunox AI <button id="aiClose">X</button></div>
+  <div id="aiPanelChat" class="ai-chat"></div>
+  <div class="ai-input"><input id="aiPanelText" placeholder="Tanya..."><button id="aiPanelSend">Kirim</button></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+  </html>
