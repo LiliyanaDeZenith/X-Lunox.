@@ -1,0 +1,48 @@
+:root{--bg:#000;--text:#e7e9ea;--border:#2f3336;--hover:rgba(231,233,234,.1);--accent:#1d9bf0;--green:#00ba7c;--pink:#f91880}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto}
+body{background:var(--bg);color:var(--text)}
+.hidden{display:none!important}
+.app{display:flex;justify-content:center;max-width:1300px;margin:0 auto}
+.sidebar{width:250px;padding:20px 12px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:5px;border-right:1px solid var(--border)}
+.logo{font-size:30px;font-weight:800;margin-bottom:20px;color:var(--accent)}
+.sidebar a{padding:12px;font-size:20px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:20px}
+.sidebar a:hover,.feed .post:hover{background:var(--hover)}
+.sidebar a.active{font-weight:700}
+.btn-primary{background:var(--accent);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-weight:700;cursor:pointer}
+.btn-primary.big{margin-top:15px;padding:15px;font-size:18px}
+.me{margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px;border-radius:999px}
+.avatar{width:40px;height:40px;border-radius:50%;background:#333;object-fit:cover}
+.feed{width:600px;border-right:1px solid var(--border);border-left:1px solid var(--border);min-height:100vh}
+.tabs{display:flex;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(0,0,0,.85);backdrop-filter:blur(10px)}
+.tab{flex:1;text-align:center;padding:16px;font-weight:700;cursor:pointer}
+.tab.active{border-bottom:4px solid var(--accent)}
+.composer{display:flex;gap:12px;padding:15px;border-bottom:1px solid var(--border)}
+.comp-right{flex:1}
+#compText{width:100%;background:transparent;border:none;color:var(--text);font-size:20px;outline:none;resize:none;min-height:50px}
+.comp-actions{display:flex;justify-content:space-between;align-items:center;margin-top:10px;color:var(--accent)}
+.post{padding:15px;border-bottom:1px solid var(--border);display:flex;gap:12px}
+.post-head{display:flex;gap:5px;align-items:center}
+.post-head b{cursor:pointer}
+.post-head span{color:#71767b}
+.post p{margin:5px 0;white-space:pre-wrap}
+.post-media{width:100%;border-radius:15px;margin-top:10px;border:1px solid var(--border)}
+.post-actions{display:flex;justify-content:space-around;margin-top:10px;color:#71767b}
+.post-actions span{cursor:pointer;display:flex;gap:5px;align-items:center}
+.post-actions span:hover{color:var(--accent)}
+.rightbar{width:350px;padding:15px 20px}
+.searchbox{background:#202327;border-radius:999px;padding:12px 15px;display:flex;gap:10px;color:#71767b;margin-bottom:15px}
+.searchbox input{background:transparent;border:none;color:#fff;outline:none;width:100%}
+.card{background:#16181c;border-radius:15px;padding:15px;margin-bottom:15px}
+.card h3{margin-bottom:12px}
+.ai-chat{max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.ai-chat .me-msg{background:var(--accent);color:#fff;padding:8px 12px;border-radius:15px;align-self:flex-end;max-width:85%}
+.ai-chat .ai-msg{background:#202327;padding:8px 12px;border-radius:15px;align-self:flex-start;max-width:85%}
+.ai-input{display:flex;gap:8px}
+.ai-input input{flex:1;background:#202327;border:none;border-radius:999px;padding:10px 15px;color:#fff;outline:none}
+.ai-panel{position:fixed;bottom:0;right:80px;width:350px;height:500px;background:#16181c;border:1px solid var(--border);border-radius:15px 15px 0 0;display:flex;flex-direction:column;z-index:100}
+.ai-head{background:var(--accent);padding:12px;border-radius:15px 15px 0 0;font-weight:700;display:flex;justify-content:space-between}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:200}
+.modal-box{background:#16181c;padding:30px;border-radius:15px;display:flex;flex-direction:column;gap:12px;width:350px}
+.modal-box input{background:#202327;border:none;border-radius:8px;padding:12px;color:#fff;outline:none}
+.badge{background:var(--pink);border-radius:50%;padding:2px 7px;font-size:12px}
+@media(max-width:1000px){.rightbar{display:none}.sidebar{width:80px}.sidebar a span{display:none}}
